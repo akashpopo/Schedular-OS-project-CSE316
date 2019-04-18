@@ -34,3 +34,21 @@ int main()
                   total = total + TimeQuantum;    } 
             if(temp[i] == 0 && count == 1) 
             { x-- ; 
+	      printf("\n Process[%d]\t %d \t %d \t %d", i + 1, Bt[i], total - At[i], total - At[i] - Bt[i]);
+                 Wt = Wt + total - At[i] - Bt[i]; 
+                 Tt = Tt + total - At[i]; 
+                 count = 0; 
+				 } 
+            if(i == limit - 1) 
+            {      i = 0 ;          }
+            else if(At[i + 1] <= total) 
+            {    i++ ;  }
+            else 
+            { i = 0;  }
+      } 
+      Awt = Wt * 1.0 / limit;
+      Awt = Tt * 1.0 / limit;
+      printf("\n\n The Average Waiting Time:  %f\n", Awt); 
+      printf("The Average Turnaround Time:  %f ", AverageTurnaroundTime); 
+      return (0) ; 
+}
